@@ -12,5 +12,6 @@ module.exports = function (app) {
 
     app.post('/api/friendslist', function (req, res) {
         friends.push(req.body);
+        res.end();
     });
 };

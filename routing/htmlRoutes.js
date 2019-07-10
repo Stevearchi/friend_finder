@@ -9,7 +9,8 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname, '../public/survey.html'))
     });
     
-    app.get("/:", function (req, res){
+    // This will handle everything except '/survey'
+    app.get("/:any", function (req, res){
 
         res.sendFile(path.join(__dirname, "../public/home.html"));
     });
