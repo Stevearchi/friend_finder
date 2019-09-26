@@ -34,6 +34,6 @@ module.exports = function (app) {
      
         
         friends.push(newProfile);
-        res.end();
+        res.send(bestMatch);
     });
 };

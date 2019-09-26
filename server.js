@@ -11,9 +11,12 @@ var PORT = process.env.PORT || 8080;
 // Parse request body as JSON; allows us to use req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routing/apiRoutes')(app);
 require('./routing/htmlRoutes')(app);
+
+
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function(){
  // Log (server-side) when our server has started
